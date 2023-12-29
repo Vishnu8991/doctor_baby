@@ -4,9 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert'; 
 
-void main() {
-  runApp(MaterialApp(home: RegPage(), debugShowCheckedModeBanner: false));
-}
+
 
 class RegPage extends StatefulWidget {
   const RegPage({Key? key}) : super(key: key);
