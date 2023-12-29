@@ -81,10 +81,15 @@ class _ChatBotState extends State<ChatBot> {
     return currentQuestionIndex > 0;
   }
 
- void _handleBack() {
+void _handleBack() {
   if (canGoBack()) {
-    // Remove the last user message
-    chatMessages.removeLast();
+    // Find and remove the last blank user message
+    for (int i = chatMessages.length - 1; i >= 0; i--) {
+      if (chatMessages[i].isUser && chatMessages[i].message.isEmpty) {
+        chatMessages.removeAt(i);
+        break;
+      }
+    }
 
     // Go back to the previous question
     currentQuestionIndex--;
@@ -93,6 +98,7 @@ class _ChatBotState extends State<ChatBot> {
     setState(() {});
   }
 }
+
 
 
   void _handleOptionSelected(String selectedOption) {
