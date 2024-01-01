@@ -1,8 +1,8 @@
 import 'package:doctor_baby/view/auth/login.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:http/http.dart' as http; // Import the HTTP library
-import 'dart:convert'; // Import for JSON encoding/decoding
+import 'package:http/http.dart' as http;
+import 'dart:convert'; 
 
 void main() {
   runApp(MaterialApp(home: RegPage(), debugShowCheckedModeBanner: false));
@@ -64,7 +64,6 @@ class _RegPageState extends State<RegPage> {
       print('All fields are required');
     }
   }
-  // late SharedPreferences preferences;
 
   @override
   Widget build(BuildContext context) {
@@ -230,34 +229,6 @@ class _RegPageState extends State<RegPage> {
                     const SizedBox(height: 25), 
                   
             
-                      // Padding(
-                      //   padding: const EdgeInsets.only(left: 35),
-                      //   child: ElevatedButton(
-                      //   style: ButtonStyle(
-                      //   backgroundColor: MaterialStateProperty.all(Colors.blue[700]),
-                      //   fixedSize: MaterialStateProperty.all(Size(250, 40)),
-                      //   ),
-                      //   onPressed: () async {
-                      //   preferences = await SharedPreferences.getInstance();
-                      //   String fst  = email.text;
-                      //   String lst  = email.text;
-                      //   String eml  = pass.text;
-                      //   String phn  = pass.text;
-                      //   String pss = pass.text;
-                            
-                      //   if(eml != "" && pss != "" && fst != "" && lst != "" && phn!= ""){
-                      //     preferences.setString("email", eml);
-                      //     preferences.setString("pass", pss);
-                      //     _registerUser();
-                      //     Navigator.of(context).push(MaterialPageRoute(builder: (context) => Login()));
-                      //   }
-                      //   }, 
-                      //   child: const Text("SIGNUP", style: TextStyle(color: Colors.white)),
-                      //   ),
-                      // ),
-            
-            
-            
                     Padding(
                         padding: const EdgeInsets.only(left: 35),
                         child: ElevatedButton(
@@ -271,9 +242,6 @@ class _RegPageState extends State<RegPage> {
                           child: const Text("SIGNUP", style: TextStyle(color: Colors.white)),
                         ),
                       ),
-            
-            
-            
             
             
                       SizedBox(height: 20),
@@ -330,8 +298,6 @@ class _RegPageState extends State<RegPage> {
                       ],
                     )
             
-            
-                      
                     ],
                   ),
                 ),
