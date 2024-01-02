@@ -1,3 +1,4 @@
+import 'package:doctor_baby/view/bottom_navi/bottom_navi.dart';
 import 'package:doctor_baby/view/home.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -54,7 +55,7 @@ class _ProfilePageState extends State<ProfilePage> {
           ProfilePage.userId = responseData["id"];
 
         print('Retrieved ID: ${ProfilePage.userId}');
-          Navigator.of(context).push(MaterialPageRoute(builder: (context) => VaccineCalendar()));
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => BottomNavi()));
         } else {
           _showSnackBar('Failed to create profile. Please try again.');
         }
