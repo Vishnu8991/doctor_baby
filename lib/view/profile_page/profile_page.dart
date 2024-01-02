@@ -20,7 +20,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
   Future<void> _saveProfile() async {
     if (_validateForm()) {
-      final url = 'http://10.0.2.2:8000/babyapp/childcreate/'; 
+      final url = 'http://10.0.2.2:8000/babyapp/childcreate/';
 
       final requestData = {
         'first_name': _firstnameController.text,
@@ -38,11 +38,13 @@ class _ProfilePageState extends State<ProfilePage> {
             'Content-Type': 'application/json',
           },
         );
+        print(response.body);
 
         if (response.statusCode == 201) {
           // Handle success
           _showSnackBar('Profile created successfully!');
-          Navigator.of(context).push(MaterialPageRoute(builder: (context) => VaccineCalendar()));
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => VaccineCalendar()));
         } else {
           _showSnackBar('Failed to create profile. Please try again.');
         }
@@ -71,7 +73,7 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
-   Future<void> _selectDate(BuildContext context) async {
+  Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
       context: context,
       initialDate: DateTime.now(),
@@ -96,6 +98,7 @@ class _ProfilePageState extends State<ProfilePage> {
       });
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,7 +113,7 @@ class _ProfilePageState extends State<ProfilePage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-              Center(
+                Center(
                   child: GestureDetector(
                     onTap: _pickImage,
                     child: CircleAvatar(
@@ -119,19 +122,18 @@ class _ProfilePageState extends State<ProfilePage> {
                       backgroundImage: _profileImage != null
                           ? FileImage(_profileImage!) as ImageProvider<Object>?
                           : AssetImage("assets/profile.jpeg"),
-                          
                     ),
                   ),
                 ),
                 SizedBox(height: 50),
-
                 TextFormField(
                   controller: _firstnameController,
-                  decoration: InputDecoration(labelText: 'First Name',
+                  decoration: InputDecoration(
+                    labelText: 'First Name',
                     labelStyle: TextStyle(fontWeight: FontWeight.bold),
-                    border: OutlineInputBorder(borderRadius: BorderRadius
-                        .circular(30) ),),
-
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30)),
+                  ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your first name.';
@@ -142,11 +144,12 @@ class _ProfilePageState extends State<ProfilePage> {
                 SizedBox(height: 12),
                 TextFormField(
                   controller: _lastnameController,
-                  decoration: InputDecoration(labelText: 'Last Name',
+                  decoration: InputDecoration(
+                    labelText: 'Last Name',
                     labelStyle: TextStyle(fontWeight: FontWeight.bold),
-                    border: OutlineInputBorder(borderRadius: BorderRadius
-                        .circular(30) ),),
-
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30)),
+                  ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your last name.';
@@ -157,18 +160,24 @@ class _ProfilePageState extends State<ProfilePage> {
                 SizedBox(height: 12),
                 TextFormField(
                   controller: _dobController,
-                  decoration: InputDecoration(labelText: 'Date of Birth',  labelStyle: TextStyle(fontWeight: FontWeight.bold),
-                    border: OutlineInputBorder(borderRadius: BorderRadius
-                        .circular(30) ),),
+                  decoration: InputDecoration(
+                    labelText: 'Date of Birth',
+                    labelStyle: TextStyle(fontWeight: FontWeight.bold),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30)),
+                  ),
                   onTap: () => _selectDate(context),
                   readOnly: true,
                 ),
                 SizedBox(height: 12),
                 TextFormField(
                   controller: _parentNameController,
-                  decoration: InputDecoration(labelText: 'Parent Name',  labelStyle: TextStyle(fontWeight: FontWeight.bold),
-                    border: OutlineInputBorder(borderRadius: BorderRadius
-                        .circular(30) ),),
+                  decoration: InputDecoration(
+                    labelText: 'Parent Name',
+                    labelStyle: TextStyle(fontWeight: FontWeight.bold),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30)),
+                  ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter the parent name.';
@@ -177,7 +186,6 @@ class _ProfilePageState extends State<ProfilePage> {
                   },
                 ),
                 SizedBox(height: 24),
-
                 Text("Gender", style: TextStyle(fontWeight: FontWeight.bold)),
                 Row(
                   children: [
@@ -203,10 +211,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     Text('Female'),
                   ],
                 ),
-
-
                 SizedBox(height: 25),
-
                 Center(
                   child: GestureDetector(
                     onTap: _saveProfile,

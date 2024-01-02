@@ -20,6 +20,7 @@ class _MapScreenState extends State<MapScreen> {
   Location locationController = Location();
   Completer<GoogleMapController> _mapController =
       Completer<GoogleMapController>();
+  CarouselController carouselController = CarouselController();
 
   List<Map<String, dynamic>> _dummyHospitals = [
     {
@@ -110,8 +111,8 @@ class _MapScreenState extends State<MapScreen> {
         await rootBundle.load("assets/ev_location_marker.png");
     final Uint8List bytes = data.buffer.asUint8List();
 
-    int width = 50; // Adjust this value based on your preference
-    int height = 50; // Adjust this value based on your preference
+    int width = 50;
+    int height = 50;
 
     final Uint8List resizedBytes = await _resizeImage(bytes, width, height);
 
@@ -162,6 +163,8 @@ class _MapScreenState extends State<MapScreen> {
       }
     });
   }
+
+  
 
   LatLng? _currentP;
 
@@ -237,6 +240,7 @@ class _MapScreenState extends State<MapScreen> {
                         ),
                       ),
                       CarouselSlider.builder(
+                        carouselController: carouselController,
                         itemCount: _dummyHospitals.length,
                         itemBuilder: (context, index, value) {
                           Map<String, dynamic> hospital =
@@ -302,7 +306,13 @@ class _MapScreenState extends State<MapScreen> {
                             ),
                           );
                         },
-                        options: CarouselOptions(),
+                        options: CarouselOptions(
+                          onPageChanged: (index, reason) {
+                            _updateMapLocation(
+                                _dummyHospitals[index]["latitude"],
+                                _dummyHospitals[index]["longitude"]);
+                          },
+                        ),
                       ),
                     ],
                   ),
@@ -310,5 +320,16 @@ class _MapScreenState extends State<MapScreen> {
               ],
             ),
     );
+  }
+
+  void _updateMapLocation(double latitude, double longitude) {
+    if (_mapController.isCompleted) {
+      _mapController.future.then((controller) {
+        controller.animateCamera(
+          CameraUpdate.newLatLng(LatLng(latitude, longitude)),
+        
+        );
+      });
+    }
   }
 }

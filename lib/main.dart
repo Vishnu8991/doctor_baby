@@ -1,4 +1,5 @@
 import 'package:doctor_baby/view/auth/registration.dart';
+import 'package:doctor_baby/view/homepage/map.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: RegPage(),
+      // home: RegPage(),
+      home: MapScreen(),
     );
   }
 }

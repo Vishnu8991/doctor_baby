@@ -1,14 +1,16 @@
 import 'package:doctor_baby/view/auth/registration.dart';
 import 'package:doctor_baby/view/home.dart';
+import 'package:doctor_baby/view/profile_page/profile_page.dart';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
-
-void main(){
-  runApp(MaterialApp(home: Login(),));
+void main() {
+  runApp(MaterialApp(
+    home: Login(),
+  ));
 }
 
 class Login extends StatefulWidget {
@@ -38,7 +40,8 @@ class _LoginState extends State<Login> {
 
         if (response.statusCode == 200) {
           print('Login successful');
-          // Navigator.of(context).push(MaterialPageRoute(builder: ((context) => ProfilePage())));
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: ((context) => ProfilePage())));
         } else {
           print('Failed to login: ${response.statusCode}');
         }
@@ -56,15 +59,19 @@ class _LoginState extends State<Login> {
       backgroundColor: Colors.grey[300],
       body: SingleChildScrollView(
         child: Center(
-          child: Column(mainAxisAlignment: MainAxisAlignment.start,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-        
-              SizedBox(height: 10,),
-        
-              Text("Sign in", style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),),
-              
-              SizedBox(height: 90,),
-        
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                "Sign in",
+                style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 90,
+              ),
               SingleChildScrollView(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -121,41 +128,44 @@ class _LoginState extends State<Login> {
                             ),
                           ),
                           const SizedBox(height: 20),
-              
-                        Row(mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("By signing in, I accept the", style: TextStyle(
-                              color: Colors.grey[700],
-                              fontSize: 13, letterSpacing: 0.4)),
-                            GestureDetector(
-                              onTap: () => "",
-                              child: Text(" Terms and Conditions", 
-                                style: TextStyle(
-                                  color: Colors.blue,
-                                  letterSpacing: 0.4,
-                                  fontSize: 13),),
-                            )
-                          ],
-                        ),
-              
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text("By signing in, I accept the",
+                                  style: TextStyle(
+                                      color: Colors.grey[700],
+                                      fontSize: 13,
+                                      letterSpacing: 0.4)),
+                              GestureDetector(
+                                onTap: () => "",
+                                child: Text(
+                                  " Terms and Conditions",
+                                  style: TextStyle(
+                                      color: Colors.blue,
+                                      letterSpacing: 0.4,
+                                      fontSize: 13),
+                                ),
+                              )
+                            ],
+                          ),
                           const SizedBox(height: 20),
-              
                           Padding(
                             padding: const EdgeInsets.only(left: 35),
                             child: ElevatedButton(
                               style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all(Colors.blue[700]),
-                                fixedSize: MaterialStateProperty.all(Size(250, 40)),
+                                backgroundColor:
+                                    MaterialStateProperty.all(Colors.blue[700]),
+                                fixedSize:
+                                    MaterialStateProperty.all(Size(250, 40)),
                               ),
                               onPressed: () {
-                                _loginUser(); 
+                                _loginUser();
                               },
-                              child: const Text("Login", style: TextStyle(color: Colors.white)),
+                              child: const Text("Login",
+                                  style: TextStyle(color: Colors.white)),
                             ),
                           ),
-              
                           SizedBox(height: 20),
-                
                           Container(
                             alignment: Alignment.center,
                             width: double.infinity,
@@ -165,47 +175,58 @@ class _LoginState extends State<Login> {
                                 Expanded(
                                   child: Divider(
                                     color: Colors.grey,
-                                    height: 1,          
+                                    height: 1,
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                  child: Text("Or continue with", style: TextStyle(color: Colors.grey[600], fontSize: 13),),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 8.0),
+                                  child: Text(
+                                    "Or continue with",
+                                    style: TextStyle(
+                                        color: Colors.grey[600], fontSize: 13),
+                                  ),
                                 ),
                                 Expanded(
                                   child: Divider(
-                                    color: Colors.grey, 
-                                    height: 1,           
+                                    color: Colors.grey,
+                                    height: 1,
                                   ),
                                 ),
                               ],
                             ),
                           ),
-                
-                          SizedBox(height: 20,),
-                
-                          Row(mainAxisAlignment: MainAxisAlignment.center,
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Image.asset("assets/google.png",height: 25),
+                              Image.asset("assets/google.png", height: 25),
                             ],
                           ),
-                          
-                          SizedBox(height: 20,),
-              
-                          Row(mainAxisAlignment: MainAxisAlignment.center,
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text("Don't have an account ?", 
-                              style: TextStyle(
-                                color: Colors.grey[700]
-                              ),),
+                              Text(
+                                "Don't have an account ?",
+                                style: TextStyle(color: Colors.grey[700]),
+                              ),
                               GestureDetector(
-                                onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (context)=>RegPage(),)),
-                                child: Text("Sign up",
-                                style: TextStyle(color: Colors.blue),)),
+                                  onTap: () => Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => RegPage(),
+                                      )),
+                                  child: Text(
+                                    "Sign up",
+                                    style: TextStyle(color: Colors.blue),
+                                  )),
                             ],
                           )
-              
-              
                         ],
                       ),
                     ),
