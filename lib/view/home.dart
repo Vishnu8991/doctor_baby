@@ -82,7 +82,7 @@ class _VaccineCalendarState extends State<VaccineCalendar> {
               child: Text("Doctor baby", 
               style: TextStyle(
                 fontSize: 25,
-                color: Colors.white,
+                color: Colors.black,
                 fontWeight: FontWeight.bold
               ),)),
     
@@ -161,7 +161,7 @@ class _VaccineCalendarState extends State<VaccineCalendar> {
               child: Container(
                 // padding: EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: Colors.grey[900],
+                  color: Colors.grey[400],
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(25),
                     topRight: Radius.circular(25),
