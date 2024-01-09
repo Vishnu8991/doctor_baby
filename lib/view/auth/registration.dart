@@ -244,50 +244,50 @@ class _RegPageState extends State<RegPage> {
                       ),
             
             
-                      SizedBox(height: 20),
+                      // SizedBox(height: 20),
             
-                      Container(
-                        alignment: Alignment.center,
-                        width: double.infinity,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Expanded(
-                              child: Divider(
-                                color: Colors.grey,
-                                height: 1,          
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                              child: Text("OR"),
-                            ),
-                            Expanded(
-                              child: Divider(
-                                color: Colors.grey, 
-                                height: 1,           
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      // Container(
+                      //   alignment: Alignment.center,
+                      //   width: double.infinity,
+                      //   child: Row(
+                      //     mainAxisAlignment: MainAxisAlignment.center,
+                      //     children: [
+                      //       Expanded(
+                      //         child: Divider(
+                      //           color: Colors.grey,
+                      //           height: 1,          
+                      //         ),
+                      //       ),
+                      //       Padding(
+                      //         padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      //         child: Text("OR"),
+                      //       ),
+                      //       Expanded(
+                      //         child: Divider(
+                      //           color: Colors.grey, 
+                      //           height: 1,           
+                      //         ),
+                      //       ),
+                      //     ],
+                      //   ),
+                      // ),
             
             
-                      SizedBox(height: 20,),
+                      // SizedBox(height: 20,),
             
-                      Container(padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                                    decoration: BoxDecoration(
-                                      border: Border.all(color: Colors.grey),
-                                      borderRadius: BorderRadius.circular(20),),
-                                    child: Row(mainAxisAlignment: MainAxisAlignment.center,
-                                      children: [
-                                        Image.asset("assets/google.png",height: 25),
-                                        SizedBox(width: 25),
-                                        Text("Signup with Google", style: TextStyle(fontSize: 16),),
-                                      ],
-                                    ),),
+                      // Container(padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                      //               decoration: BoxDecoration(
+                      //                 border: Border.all(color: Colors.grey),
+                      //                 borderRadius: BorderRadius.circular(20),),
+                      //               child: Row(mainAxisAlignment: MainAxisAlignment.center,
+                      //                 children: [
+                      //                   Image.asset("assets/google.png",height: 25),
+                      //                   SizedBox(width: 25),
+                      //                   Text("Signup with Google", style: TextStyle(fontSize: 16),),
+                      //                 ],
+                      //               ),),
             
-                                    SizedBox(height: 10,),
+                      //               SizedBox(height: 10,),
             
                     Row(mainAxisAlignment: MainAxisAlignment.center,
                       children: [

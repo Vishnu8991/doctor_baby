@@ -154,41 +154,41 @@ class _LoginState extends State<Login> {
                             ),
                           ),
               
-                          SizedBox(height: 20),
+                          // SizedBox(height: 20),
                 
-                          Container(
-                            alignment: Alignment.center,
-                            width: double.infinity,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Expanded(
-                                  child: Divider(
-                                    color: Colors.grey,
-                                    height: 1,          
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                  child: Text("Or continue with", style: TextStyle(color: Colors.grey[600], fontSize: 13),),
-                                ),
-                                Expanded(
-                                  child: Divider(
-                                    color: Colors.grey, 
-                                    height: 1,           
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
+                          // Container(
+                          //   alignment: Alignment.center,
+                          //   width: double.infinity,
+                          //   child: Row(
+                          //     mainAxisAlignment: MainAxisAlignment.center,
+                          //     children: [
+                          //       Expanded(
+                          //         child: Divider(
+                          //           color: Colors.grey,
+                          //           height: 1,          
+                          //         ),
+                          //       ),
+                          //       Padding(
+                          //         padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                          //         child: Text("Or continue with", style: TextStyle(color: Colors.grey[600], fontSize: 13),),
+                          //       ),
+                          //       Expanded(
+                          //         child: Divider(
+                          //           color: Colors.grey, 
+                          //           height: 1,           
+                          //         ),
+                          //       ),
+                          //     ],
+                          //   ),
+                          // ),
                 
-                          SizedBox(height: 20,),
+                          // SizedBox(height: 20,),
                 
-                          Row(mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.asset("assets/google.png",height: 25),
-                            ],
-                          ),
+                          // Row(mainAxisAlignment: MainAxisAlignment.center,
+                          //   children: [
+                          //     Image.asset("assets/google.png",height: 25),
+                          //   ],
+                          // ),
                           
                           SizedBox(height: 20,),
               

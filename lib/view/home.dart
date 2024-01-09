@@ -12,7 +12,7 @@ class VaccineCalendar extends StatefulWidget {
 
   @override
   _VaccineCalendarState createState() => _VaccineCalendarState();
-}
+  }
 
 class _VaccineCalendarState extends State<VaccineCalendar> {
   CalendarFormat _calendarFormat = CalendarFormat.month;
@@ -76,7 +76,6 @@ class _VaccineCalendarState extends State<VaccineCalendar> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-    
             Container(
               alignment: Alignment.center,
               child: Text("Doctor baby", 
@@ -175,7 +174,7 @@ class _VaccineCalendarState extends State<VaccineCalendar> {
                     DateTime date = datesController.dates[index];
                     return Card(
                       margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                      color: Colors.black,
+                      color: Colors.grey[900],
                       child: ListTile(
                         title: Row(mainAxisAlignment: MainAxisAlignment.center,
                           children: [
